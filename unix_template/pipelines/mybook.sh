@@ -9,7 +9,7 @@ echo "-- Q1 --"
 # Example output:
 # 14 book
 # 10 cover
-mostCommonWords=$()
+mostCommonWords=$(cat *.txt | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '\n' | sort | uniq -c | sort -nr | head -10)
 # Prints the mostCommonWords
 echo "Most common words in my book:"
 echo "$mostCommonWords"
