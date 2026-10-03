@@ -8,3 +8,11 @@
 # This can be done by piping the output to a file.
 # Example: `./logToCSV access_log > output.csv`
 # It could take some time to convert all of the `access_log` file contents. Consider using a small subset for testing.
+echo "Client,Time,Type,Path,Status,Size"
+
+awk '{
+    gsub(/^\[/, "", $4)
+    gsub(/^"/, "", $6)
+    print $1 "," $4 "," $6 "," $7 "," $9 "," $10
+}' "$1"
+
