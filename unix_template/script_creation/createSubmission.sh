@@ -6,3 +6,4 @@
 # If called in a directory, it should recursively find all the `.sh` files and add them to a zip folder.
 # The zip folder should only contain `.sh` files and no folders.
 find . -name "*.sh" -exec zip -j "$1" {} +
+
